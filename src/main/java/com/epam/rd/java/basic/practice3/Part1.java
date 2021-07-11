@@ -29,7 +29,7 @@ public class Part1 {
         Matcher matcher = pattern.matcher(input);
         StringBuilder sb = new StringBuilder();
         while (matcher.find()) {
-            sb.append(matcher.group(2)).append(" (email:").append(matcher.group(4)).append(")").append(System.lineSeparator());
+            sb.append(matcher.group(2)).append(matcher.group(3)).append(" (email: ").append(matcher.group(4)).append(")").append(System.lineSeparator());
         }
         return sb.toString();
     }
@@ -42,3 +42,5 @@ public class Part1 {
         return null;
     }
 }
+
+
