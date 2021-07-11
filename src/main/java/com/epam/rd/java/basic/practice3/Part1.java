@@ -24,7 +24,14 @@ public class Part1 {
     }
 
     public static String convert2(String input) {
-        return null;
+        String regex = "(\\S+);(\\S+)\\s(\\S+);((\\S+)@(\\S+))$";
+        Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+        Matcher matcher = pattern.matcher(input);
+        StringBuilder sb = new StringBuilder();
+        while (matcher.find()) {
+            sb.append(matcher.group(2)).append(" (email:").append(matcher.group(4)).append(")").append(System.lineSeparator());
+        }
+        return sb.toString().trim();
     }
 
     public static String convert3(String input) {
