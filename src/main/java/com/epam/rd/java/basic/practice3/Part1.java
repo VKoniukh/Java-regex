@@ -29,7 +29,7 @@ public class Part1 {
         Matcher matcher = pattern.matcher(input);
         StringBuilder sb = new StringBuilder();
         while (matcher.find()) {
-            sb.append(matcher.group(3)).append(matcher.group(2)).append(" (email: ").append(matcher.group(4)).append(")").append(System.lineSeparator());
+            sb.append(matcher.group(3)).append(" ").append(matcher.group(2)).append(" (email: ").append(matcher.group(4)).append(")").append(System.lineSeparator());
         }
         return sb.toString();
     }
@@ -51,7 +51,7 @@ public class Part1 {
         Matcher matcher = pattern.matcher(input);
         StringBuilder sb = new StringBuilder();
         while (matcher.find()) {
-            sb.append(matcher.group(1)).append(matcher.group(2)).append(matcher.group(3)).append(matcher.group(4)).append(matcher.group(5)).append(matcher.group(6)).append(System.lineSeparator());
+            sb.append(matcher.group(1)).append(matcher.group(2)).append(matcher.group(3)).append(matcher.group(4)).append(matcher.group(5)).append(matcher.group(6)).append(matcher.group(7)).append(System.lineSeparator());
         }
         return sb.toString();
     }
