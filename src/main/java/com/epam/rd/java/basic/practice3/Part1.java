@@ -20,7 +20,7 @@ public class Part1 {
         while (matcher.find()) {
             sb.append(matcher.group(1)).append(": ").append(matcher.group(4)).append(System.lineSeparator());
         }
-        return sb.toString().trim();
+        return sb.toString();
     }
 
     public static String convert2(String input) {
@@ -31,7 +31,7 @@ public class Part1 {
         while (matcher.find()) {
             sb.append(matcher.group(2)).append(" (email:").append(matcher.group(4)).append(")").append(System.lineSeparator());
         }
-        return sb.toString().trim();
+        return sb.toString();
     }
 
     public static String convert3(String input) {
