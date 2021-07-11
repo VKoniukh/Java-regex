@@ -5,9 +5,8 @@ import java.util.regex.Pattern;
 
 public class Part1 {
 
-    public static final String string = Util.getInput("part1.txt");
-
     public static void main(String[] args) {
+        String string = Util.getInput("part1.txt");
         System.out.println(Part1.convert1(string));
         System.out.println(Part1.convert1(string));
 
@@ -16,7 +15,7 @@ public class Part1 {
     public static String convert1(String input) {
         String regex = "(\\S+);(\\S+)\\s(\\S+);((\\S+)@(\\S+))$";
         Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
-        Matcher matcher = pattern.matcher(string);
+        Matcher matcher = pattern.matcher(input);
         StringBuilder sb = new StringBuilder();
         while (matcher.find()) {
             sb.append(matcher.group(1)).append(": ").append(matcher.group(4)).append(System.lineSeparator());
