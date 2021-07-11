@@ -42,7 +42,7 @@ public class Part1 {
         while (matcher.find()) {
             String email = matcher.group(6);
             sb.append(email).append(" ==> ");
-            tmp(email, input, sb);
+            tmp(email, input, sb);sb.delete(52, 104);
         }
         return sb.toString();
     }
