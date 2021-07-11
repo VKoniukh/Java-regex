@@ -35,23 +35,37 @@ public class Part1 {
     }
 
     public static String convert3(String input) {
+        String regax = "(\\S+);(\\S+)\\s(\\S+);((\\S+)@(\\S+))$";
+        Pattern pattern = Pattern.compile(regax, Pattern.MULTILINE);
+        Matcher matcher = pattern.matcher(input);
+        StringBuilder sb = new StringBuilder();
+        while (matcher.find()) {
+            String email = matcher.group(6);
+            sb.append(email).append(" ==> ");
+            tmp(email, input, sb);
+        }
+        return sb.toString();
+    }
+
+    public static void tmp(String email, String input, StringBuilder sb) {
+        String regax = "(\\S+);(\\S+)\\s(\\S+);((\\S+)@(\\S+))$";
+        Pattern pattern = Pattern.compile(regax, Pattern.MULTILINE);
+        Matcher matcher = pattern.matcher(input);
+        while (matcher.find()) {
+            if (matcher.group(6).equals(email)) {
+                sb.append(matcher.group(1)).append(" ");
+            }
+        }
+        sb.append(System.lineSeparator());
+    }
+
+    public static String convert4(String input) {
         String regex = "(\\S+);(\\S+)\\s(\\S+);((\\S+)@(\\S+))$";
         Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
         Matcher matcher = pattern.matcher(input);
         StringBuilder sb = new StringBuilder();
         while (matcher.find()) {
-            sb.append(matcher.group(1)).append(matcher.group(2)).append(matcher.group(3)).append(matcher.group(4)).append(matcher.group(5)).append(matcher.group(6)).append(System.lineSeparator());
-        }
-        return sb.toString();
-    }
-
-    public static String convert4(String input) {
-        String regex = "(\\S+);(\\S+)\\s(\\S+);((\\S+)@(\\S+));\\d{6}$";
-        Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
-        Matcher matcher = pattern.matcher(input);
-        StringBuilder sb = new StringBuilder();
-        while (matcher.find()) {
-            sb.append(matcher.group(1)).append(matcher.group(2)).append(matcher.group(3)).append(matcher.group(4)).append(matcher.group(5)).append(matcher.group(6)).append(matcher.group(7)).append(System.lineSeparator());
+            sb.append(matcher.group(1)).append(matcher.group(2)).append(matcher.group(3)).append(matcher.group(4)).append(matcher.group(5)).append(matcher.group(6)).append("4629").append(System.lineSeparator());
         }
         return sb.toString();
     }
