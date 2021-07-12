@@ -48,7 +48,7 @@ public class Part1 {
             sb.deleteCharAt(sb.lastIndexOf(","));
             n++;
         }
-        return sb.toString().trim();
+        return sb.toString();
     }
 
 
@@ -77,4 +77,3 @@ public class Part1 {
         return sb.toString();
     }
 }
-
