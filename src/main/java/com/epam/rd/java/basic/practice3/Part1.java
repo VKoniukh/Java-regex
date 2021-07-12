@@ -46,6 +46,7 @@ public class Part1 {
             sb.append(email).append(" ==> ");
             tmp(email, input, sb);
             sb.deleteCharAt(sb.lastIndexOf(","));
+            sb.append(" ");
             n++;
         }
         return sb.toString();
