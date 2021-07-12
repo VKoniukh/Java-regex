@@ -46,7 +46,7 @@ public class Part1 {
             sb.append(email).append(" ==> ");
             tmp(email, input, sb);
             sb.deleteCharAt(sb.lastIndexOf(","));
-            sb.append("  ");
+            sb.append(System.lineSeparator());
             n++;
         }
         return sb.toString();
@@ -78,3 +78,4 @@ public class Part1 {
         return sb.toString();
     }
 }
+
