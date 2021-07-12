@@ -45,7 +45,7 @@ public class Part1 {
             String email = matcher.group(6);
             sb.append(email).append(" ==> ");
             tmp(email, input, sb);
-            sb.deleteCharAt(sb.lastIndexOf(","));
+            sb.append(System.lineSeparator()).deleteCharAt(sb.lastIndexOf(","));
             n++;
         }
         return sb.toString().trim();
