@@ -78,7 +78,3 @@ public class Part1 {
     }
 }
 
-<....com ==> petrov, буш[
-google.com ==> иванов, обама]
-<....com ==> petrov, буш[
-google.com ==> иванов, обама ]
