@@ -7,8 +7,9 @@ public class Part1 {
 
     public static void main(String[] args) {
         String string = Util.getInput("part1.txt");
-        System.out.println(Part1.convert1(string));
-        System.out.println(Part1.convert1(string));
+//        System.out.println(Part1.convert1(string));
+//        System.out.println(Part1.convert1(string));
+        System.out.println(Part1.convert3(string));
 
     }
 
@@ -39,13 +40,17 @@ public class Part1 {
         Pattern pattern = Pattern.compile(regax, Pattern.MULTILINE);
         Matcher matcher = pattern.matcher(input);
         StringBuilder sb = new StringBuilder();
-        while (matcher.find()) {
+        int n = 0;
+        while (matcher.find()&& n < 2) {
             String email = matcher.group(6);
             sb.append(email).append(" ==> ");
-            tmp(email, input, sb);sb.delete(52, 104);
+            tmp(email, input, sb);
+            sb.deleteCharAt(sb.lastIndexOf(","));
+            n++;
         }
         return sb.toString();
     }
+
 
     public static void tmp(String email, String input, StringBuilder sb) {
         String regax = "(\\S+);(\\S+)\\s(\\S+);((\\S+)@(\\S+))$";
@@ -53,7 +58,9 @@ public class Part1 {
         Matcher matcher = pattern.matcher(input);
         while (matcher.find()) {
             if (matcher.group(6).equals(email)) {
-                sb.append(matcher.group(1)).append(" ");
+                sb.append(matcher.group(1)).append(", ");
+//                sb.deleteCharAt(sb.length() - 1);
+//                sb.deleteCharAt(sb.lastIndexOf(","));
             }
         }
         sb.append(System.lineSeparator());
