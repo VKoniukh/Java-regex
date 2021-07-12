@@ -48,7 +48,7 @@ public class Part1 {
             sb.deleteCharAt(sb.lastIndexOf(","));
             n++;
         }
-        return sb.toString();
+        return sb.toString().trim();
     }
 
 
@@ -78,3 +78,7 @@ public class Part1 {
     }
 }
 
+<....com ==> petrov, буш[
+google.com ==> иванов, обама]
+<....com ==> petrov, буш[
+google.com ==> иванов, обама ]
