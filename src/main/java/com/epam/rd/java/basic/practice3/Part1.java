@@ -45,10 +45,11 @@ public class Part1 {
             String email = matcher.group(6);
             sb.append(email).append(" ==> ");
             tmp(email, input, sb);
-            sb.append(System.lineSeparator()).deleteCharAt(sb.lastIndexOf(","));
+            sb.deleteCharAt(sb.lastIndexOf(","));
             n++;
         }
-        return sb.toString().trim();
+        sb.append(System.lineSeparator());
+        return sb.toString();
     }
 
 
@@ -56,11 +57,10 @@ public class Part1 {
         String regax = "(\\S+);(\\S+)\\s(\\S+);((\\S+)@(\\S+))$";
         Pattern pattern = Pattern.compile(regax, Pattern.MULTILINE);
         Matcher matcher = pattern.matcher(input);
+        int o = 0;
         while (matcher.find()) {
             if (matcher.group(6).equals(email)) {
                 sb.append(matcher.group(1)).append(", ");
-//                sb.deleteCharAt(sb.length() - 1);
-//                sb.deleteCharAt(sb.lastIndexOf(","));
             }
         }
         sb.append(System.lineSeparator());
