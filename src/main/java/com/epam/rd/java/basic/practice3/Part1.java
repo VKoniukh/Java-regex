@@ -49,8 +49,7 @@ public class Part1 {
         }
         sb.replace(25, 26, (System.lineSeparator()));
         sb.replace(63, 64, (System.lineSeparator()));
-        String sb1 = sb.toString();
-        return sb1.trim();
+        return sb.toString().trim();
     }
 
 
