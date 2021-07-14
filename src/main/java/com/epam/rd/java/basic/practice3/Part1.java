@@ -43,13 +43,12 @@ public class Part1 {
         int n = 0;
         while (matcher.find()&& n < 2) {
             String email = matcher.group(6);
-            sb.append(email).append(" ==> ");
-            tmp(email, input, sb);
+            sb.append(email).append(" ==> ");tmp(email, input, sb);
             sb.deleteCharAt(sb.lastIndexOf(","));
             n++;
         }
-        sb.append(System.lineSeparator());
-        return sb.toString();
+        String sb1 = sb.toString().trim();
+        return sb1+(System.lineSeparator());
     }
 
 
