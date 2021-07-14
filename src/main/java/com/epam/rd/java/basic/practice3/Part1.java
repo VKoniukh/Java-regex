@@ -44,11 +44,12 @@ public class Part1 {
         while (matcher.find()&& n < 2) {
             String email = matcher.group(6);
             sb.append(email).append(" ==> ");tmp(email, input, sb);
-            sb.deleteCharAt(sb.lastIndexOf(","));
+            sb.deleteCharAt(sb.lastIndexOf(", "));
             n++;
         }
+        sb.replace(25, 27, "");
         String sb1 = sb.toString().trim();
-        return sb1+(System.lineSeparator());
+        return sb1.trim();
     }
 
 
