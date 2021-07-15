@@ -24,7 +24,6 @@ public class Part3 {
                             } else sb.append(Character.toUpperCase(str.charAt(0))).append(str.substring(1)).append(" ");
                         } else sb.append(m.group()).append(" ");
                     }
-                    sb.append(System.lineSeparator());
         }
         return sb.toString();
     }

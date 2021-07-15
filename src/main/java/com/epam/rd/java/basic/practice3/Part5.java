@@ -23,7 +23,6 @@ public class Part5 {
                 roman.append(romanLiterals[i]);
             }
         }
-        System.out.println("Roman: " + roman.toString());
         return roman.toString();
     }
 
