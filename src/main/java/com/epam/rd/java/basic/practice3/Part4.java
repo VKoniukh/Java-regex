@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Part4 {
 
@@ -44,6 +45,6 @@ public class Part4 {
         md5Hex = "0" + md5Hex;
     }
 
-    return md5Hex;
+    return md5Hex.toUpperCase(Locale.ROOT);
     }
 }
