@@ -7,12 +7,26 @@ public class Part5 {
 
     public static void main(String[] args) {
 
-        
+
     }
 
     public static String decimal2Roman(int dec) {
-        return null;
+        System.out.println("Integer: " + dec);
+        int[] values = {dec};
+        String[] romanLiterals = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+        StringBuilder roman = new StringBuilder();
+
+        for (int i = 0; i < values.length; i++) {
+            while (dec >= values[i]) {
+                dec -= values[i];
+                roman.append(romanLiterals[i]);
+            }
+        }
+        System.out.println("Roman: " + roman.toString());
+        return roman.toString();
     }
+
 
     public static int roman2Decimal(String roman) {
         final int [] decimals = {4, 9, 40, 90, 1, 5, 10, 50, 100};
