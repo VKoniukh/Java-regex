@@ -45,7 +45,7 @@ public class Part1 {
             sb.deleteCharAt(sb.lastIndexOf(", "));
             n++;
         }
-        sb.replace(25, 26, (System.lineSeparator()));
+        sb.replace(25, 27, (System.lineSeparator()));
         String sb1 = sb.toString().trim();
         return sb1.trim()+System.lineSeparator();
     }
