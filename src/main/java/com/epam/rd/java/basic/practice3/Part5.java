@@ -7,13 +7,13 @@ public class Part5 {
 
     public static void main(String[] args) {
 
-
+       // "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
     }
 
     public static String decimal2Roman(int dec) {
         System.out.println("Integer: " + dec);
         int[] values = {dec};
-        String[] romanLiterals = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        String[] romanLiterals = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
 
         StringBuilder roman = new StringBuilder();
 
