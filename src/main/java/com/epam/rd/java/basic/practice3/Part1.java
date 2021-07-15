@@ -7,8 +7,6 @@ public class Part1 {
 
     public static void main(String[] args) {
         String string = Util.getInput("part1.txt");
-//        System.out.println(Part1.convert1(string));
-//        System.out.println(Part1.convert1(string));
         System.out.println(Part1.convert3(string));
 
     }
@@ -47,8 +45,7 @@ public class Part1 {
             sb.deleteCharAt(sb.lastIndexOf(", "));
             n++;
         }
-        sb.replace(25, 27, (System.lineSeparator()));
-        //sb.replace(63, 63, (System.lineSeparator()));
+        sb.replace(25, 26, (System.lineSeparator()));
         String sb1 = sb.toString().trim();
         return sb1.trim()+System.lineSeparator();
     }
@@ -58,7 +55,6 @@ public class Part1 {
         String regax = "(\\S+);(\\S+)\\s(\\S+);((\\S+)@(\\S+))$";
         Pattern pattern = Pattern.compile(regax, Pattern.MULTILINE);
         Matcher matcher = pattern.matcher(input);
-        int o = 0;
         while (matcher.find()) {
             if (matcher.group(6).equals(email)) {
                 sb.append(matcher.group(1)).append(", ");
